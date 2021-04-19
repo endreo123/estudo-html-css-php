@@ -7,6 +7,14 @@ header{
     padding: 20px 0;
 }
 
+/* Para fazer calculos no css pode-se usar a propriedade calc(). Exemplo:
+
+header{
+    padding: calc(20%-20px)
+}
+Neste caso o tamanho do padding sera 20% menos 20px.
+*/
+
 .caixa {
     position:relative;
     width: 940px;
@@ -154,6 +162,12 @@ td,th {
     font-size: 2em;
     margin: 0 0 1em;
     clear: left;
+    /* pode-se criar sombras em texto usando: text-shadow: 2px 2px red;
+    tem as mesmas propriedades do box-shadow só que aplicado a sombras */
+}
+
+.titulo-principal:first-letter {
+    font-weight: bold;
 }
 
 .principal {
@@ -224,13 +238,63 @@ td,th {
     se for nth-child(2n) sera aplicado a cada 2 itens*/
     font-weight: bold;
 }
+/* colocando a subclasse before(antes) ou after(depois) pode-se adcionar conteudo antes de alguma classe.*/
+.itens:before {
+    content: "\2605";
+}
 
 .imagem-beneficios {
     width: 60%;
+    opacity: 1; /* define a opacidade da imagem podendo ir de 0 a 1 */
+    transition: 400ms;
+    box-shadow: 10px 10px 10px #000000;
+    /*
+    box-shadow: eixoX eixoY Blur Tamanho Cor; pode colocar varias sombras só colocando uma virgula para separar
+    colocando a propriedade inset se define a sombra como interna
+    */ 
+}
+
+.imagem-beneficios:hover {
+    opacity: .3;
 }
 
 .video {
     width: 560px;
     margin: 2em auto;
-
 }
+
+/*Para selecionar uma uma tag espeficiado do html usa-se da seguinte maneira Exemplo:
+
+main > p {
+    background: red;
+}
+
+Neste exemplo ira seleciona somente a tag <p> que for filha diretamente da tag <main>.
+===============================================================================================
+
+img + p {
+    background: blue;
+}
+
+Ira selecionar somente a primeira tag <p> após a tag img.
+===============================================================================================
+
+img ~ p {
+    background: yellow;
+}
+
+Ira selecionar todas as tags <p> após a tag <img>
+===============================================================================================
+
+.principal p:not(#missao) {
+    backgroud: orange;
+}
+
+Ira aplicar a propriedade nos elementos que não utilizam o id #missao
+
+===============================================================================================
+*/
+
+/* pode-se colocar opacidade em quaisquer elementos da pagina colocando o numero adcional usando a linguagem rpg exemplo:color:
+    color: rgb(5,6,7,0.5) o ultimo numero depois do 7 definiu opacidade de 0.5
+*/

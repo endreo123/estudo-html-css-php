@@ -1,0 +1,28 @@
+@media screen and (max-width: 480px) { /* define um estilo diferente de acordo com o tamanho da tela */
+
+    /* referente a pagina index*/ 
+    .caixa, .principal p, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+    
+    .utensilios {
+        margin-left: 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+    /* refente a pagina contatos*/
+    .input-padrao {
+        width: 80%;
+    }
+
+}
